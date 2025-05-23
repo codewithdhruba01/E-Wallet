@@ -8,66 +8,50 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>E-Wallet</header>
 
-  <div class="container">
+<header>E-Wallet Manager</header>
+<div class="container">
     <h2>Your Cards</h2>
-    <div class="card-list" id="cardList"></div>
+  <div class="card-list" id="cardList"></div>
 
-    <div class="add-form">
-      <h3>Add New Card</h3>
-      <select id="cardType">
-        <option value="Visa">Visa</option>
-        <option value="MasterCard">MasterCard</option>
-        <option value="RuPay">RuPay</option>
-        <option value="Amex">American Express</option>
-      </select>
-      <input type="text" id="cardHolder" placeholder="Full Cardholder Name" />
-      <input type="text" id="cardNumber" placeholder="Card Number (16 digits)" maxlength="16" />
-      <input type="text" id="expiry" placeholder="Expiry Date (MM/YY)" />
-      <input type="text" id="cvv" placeholder="CVV (3 or 4 digits)" maxlength="4" />
-      <button onclick="addCard()">Add Card</button>
-      <div class="error-msg" id="addError">Please provide valid input</div>
-    </div>
-  </div>
+  <form class="add-form">
+    <h3>Add New Card</h3>
+    <select id="cardType">
+      <option value="Visa">Visa</option>
+      <option value="MasterCard">MasterCard</option>
+      <option value="Rupay">Rupay</option>
+    </select>
+    <input type="text" id="cardHolder" placeholder="Cardholder Name" />
+    <input type="text" id="cardNumber" placeholder="Card Number" />
+    <input type="text" id="expiry" placeholder="MM/YY" />
+    <input type="text" id="cvv" placeholder="CVV" />
+    <span class="error-msg" id="addError">Invalid input! Please check all fields.</span>
+    <button type="button" onclick="addCard()">Add Card</button>
+  </form>
+</div>
 
-  <!-- Modal for card details -->
-  <div class="modal" id="cardModal">
-    <div class="modal-content" id="modalContent">
-      <h3>Card Details</h3>
-      <p id="modalType"></p>
-      <p id="modalHolder"></p>
-      <p id="modalNumber"></p>
-      <p id="modalExpiry"></p>
-      <p id="modalCVV"></p>
-      <button class="close-btn" onclick="closeModal()">Close</button>
-    </div>
+<div class="modal" id="cardModal">
+  <div class="modal-content">
+    <h3>Card Details</h3>
+    <p id="modalType">Card Type</p> <i class="fa-solid fa-copy copy-btn" onclick="copyToClipboard('modalType')"></i>
+    <p id="modalHolder">Cardholder</p> <i class="fa-solid fa-copy copy-btn" onclick="copyToClipboard('modalHolder')"></i>
+    <p id="modalNumber">Card Number</p> <i class="fa-solid fa-copy copy-btn" onclick="copyToClipboard('modalNumber')"></i>
+    <p id="modalExpiry">Expiry Date</p> <i class="fa-solid fa-copy copy-btn" onclick="copyToClipboard('modalExpiry')"></i>
+    <p id="modalCVV">CVV</p> <i class="fa-solid fa-copy copy-btn" onclick="copyToClipboard('modalCVV')"></i>
+    <button class="close-btn" onclick="closeModal()">Close</button>
   </div>
+</div>
 
-  <!-- Edit Modal -->
-  <div class="modal" id="editModal">
-    <div class="modal-content">
-      <h3>Edit Card</h3>
-      <select id="editCardType"></select>
-      <input type="text" id="editCardHolder" placeholder="Full Cardholder Name" />
-      <input type="text" id="editCardNumber" placeholder="Card Number (16 digits)" maxlength="16" />
-      <input type="text" id="editExpiry" placeholder="Expiry Date (MM/YY)" />
-      <input type="text" id="editCVV" placeholder="CVV (3 or 4 digits)" maxlength="4" />
-      <div class="error-msg" id="editError">Please provide valid input</div>
-      <button onclick="saveEdit()">Done</button>
-    </div>
-  </div>
-  
-  <footer>
+<footer>
   <div class="footer-content">
-    <p>&copy; 2025 E-Wallet. All rights reserved.</p>
+    <p>&copy; 2025 E-Wallet Manager</p>
     <div class="footer-icons">
-      <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="#" aria-label="Fork"><i class="fas fa-code-branch"></i></a>
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>

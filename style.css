@@ -3,6 +3,9 @@
       background: #f0f4f8;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     header {
       background: #1e88e5;
@@ -15,6 +18,7 @@
       padding: 20px;
       max-width: 800px;
       margin: auto;
+      flex: 1;
     }
     .card-list {
       display: flex;
@@ -76,6 +80,7 @@
       gap: 12px;
     }
     .add-form h3 {
+      text-align: center;
       margin-bottom: 16px;
       color: #1e88e5;
     }
@@ -106,12 +111,27 @@
       background: white;
       padding: 30px;
       border-radius: 12px;
-      width: 300px;
+      width: 320px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      text-align: center;
+      text-align: left;
+      position: relative;
     }
     .modal-content h3 {
       margin-top: 0;
+      text-align: center;
+    }
+    .modal-content p {
+      margin: 10px 0;
+    }
+    .copy-btn {
+      color: #1e88e5;
+      cursor: pointer;
+      margin-left: 8px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .copy-btn:hover {
+      color: #0d47a1;
     }
     .close-btn {
       background: #e53935;
@@ -121,113 +141,81 @@
       margin-top: 20px;
       border-radius: 8px;
       cursor: pointer;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
     .error-msg {
       color: red;
       margin-top: 10px;
       display: none;
     }
-html, body {
-  height: 100%;
-}
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+    footer {
+      background-color: #1e88e5;
+      color: white;
+      padding: 16px 20px;
+      font-size: 14px;
+      border-top: 2px solid #1565c0;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .footer-content p {
+      margin: 0;
+      text-align: center;
+      flex: 1;
+    }
+    .footer-icons {
+      display: flex;
+      gap: 15px;
+    }
+    .footer-icons a {
+      color: white;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+    .footer-icons a:hover {
+      color: #bbdefb;
+    }
 
-.container {
-  flex: 1;
-}
-
-footer {
-  background-color: #1e88e5;
-  color: white;
-  padding: 16px 20px;
-  font-size: 15px;
-  border-top: 2px solid none;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.footer-content p {
-  margin: 0;
-  text-align: center;
-  flex: 1;
-}
-
-.footer-icons {
-  display: flex;
-  gap: 15px;
-}
-
-.footer-icons a {
-  color: white;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-
-.footer-icons a:hover {
-  color: #e74200;
-}
-
-@media (max-width: 600px) {
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-}
-
-    /* ---------- Responsive Styles ---------- */
-@media (max-width: 768px) {
-  header {
-    font-size: 20px;
-    padding: 16px;
-  }
-
-  .container {
-    padding: 10px;
-  }
-
-  .card {
-    width: 100%;
-    padding: 16px;
-  }
-
-  .add-form {
-    padding: 20px;
-  }
-
-  button {
-    padding: 10px 16px;
-  }
-
-  .add-form input, .add-form select {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .modal-content {
-    padding: 20px;
-  }
-
-  .add-form h3 {
-    font-size: 18px;
-  }
-
-  .card-icons {
-    position: static;
-    justify-content: end;
-    margin-top: 10px;
-  }
-}
+    @media (max-width: 768px) {
+      header {
+        font-size: 20px;
+        padding: 16px;
+      }
+      .container {
+        padding: 10px;
+      }
+      .card {
+        width: 100%;
+        padding: 16px;
+      }
+      .add-form {
+        padding: 20px;
+      }
+      button {
+        padding: 10px 16px;
+      }
+      .add-form input, .add-form select {
+        font-size: 14px;
+      }
+    }
+    @media (max-width: 480px) {
+      .modal-content {
+        padding: 20px;
+      }
+      .add-form h3 {
+        font-size: 18px;
+      }
+      .card-icons {
+        position: static;
+        justify-content: end;
+        margin-top: 10px;
+      }
+    }
